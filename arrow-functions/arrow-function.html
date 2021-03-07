@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrow Function</title>
+</head>
+
+<body>
+  <script>
+    const languages = ['PHP', 'Golang', 'Javascript'];
+
+    const love = languages.map(function (name) {
+      return `I love ${name}`;
+    });
+
+    const loveArrow = languages.map((name) => {
+      return `I love ${name}`
+    });
+
+    const loveArrowSingle = languages.map(name => {
+      return `I love ${name}`
+    });
+
+    const loveArrowOneLine = languages.map(name => `I love ${name}`);
+
+    const loveChain = languages
+      .filter(name => name === 'Javascript')
+      .map(name => `I love ${name}`);
+
+    console.log('Conventional function', love)
+    console.log('Arrow function', loveArrow)
+    console.log('Arrow function single', loveArrowSingle)
+    console.log('Arrow function one line', loveArrowOneLine)
+    console.log('Arrow function love chain', loveChain)
+  </script>
+</body>
+
+</html>
