@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tagged template</title>
+</head>
+<style>
+  .green {
+    color: forestgreen;
+    font-size: 25px;
+  }
+</style>
+
+<body>
+
+  <script>
+
+    const city = 'Maresias';
+    const something = 'Beach';
+    const otherThing = 'Medina';
+
+
+    function green(template, ...values) {
+      return template.reduce((accumulator, part, i) => {
+        return `
+          ${accumulator} 
+          <span class='green'> ${values[i - 1].toUpperCase()} </span>
+          ${part}
+        `
+      })
+    }
+
+    const myCity = green`I live in ${city} the city of ${otherThing} and ${something}`;
+
+    document.body.innerHTML = myCity;
+  </script>
+</body>
+
+</html>
